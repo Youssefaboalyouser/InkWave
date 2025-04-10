@@ -7,7 +7,7 @@
     align-items: center;
 }
 
-.navbar a{
+.navbar a {
     color: var(--offwhite);
     align-self: center;
     transition: 0.3s ease-in-out;
@@ -314,6 +314,25 @@
 .inputs textarea:focus {
     box-shadow: 0 10px 20px var(--str-gree);
     transform: scale(1.1);
+}
+
+.inputs .submit-complain {
+    width: 15%;
+    height: 15%;
+    align-self: center;
+    margin-bottom: 40px;
+    border: none;
+    background-color: var(--str-gree);
+    color: var(--offwhite);
+    border-radius: 5px;
+    padding: 5px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+.inputs .submit-complain:hover {
+    transform: scale(0.9);
+    box-shadow: 0 10px 20px var(--gold-sand);
 }
 
 .footer a p {
