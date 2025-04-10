@@ -1,0 +1,458 @@
+.navbar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    background-color: #000000;
+    height: 50px;
+    align-items: center;
+}
+
+.navbar a{
+    color: var(--offwhite);
+    align-self: center;
+    transition: 0.3s ease-in-out;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.navbar a:hover {
+    background-color: var(--str-gree);
+    border-radius: 5px;
+}
+
+.heading {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    flex-wrap: wrap;
+}
+
+.heading .leftcontaier {
+    width: 50%;
+    background-color: var(--offwhite);
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.leftcontaier .about {
+    margin: 20px 0 0 20px;
+    font-size: 30px;
+    transition: 0.3s ease-in-out;
+    width: fit-content;
+    padding: 10px;
+}
+
+.leftcontaier .about:hover {
+    background-color: var(--str-gree);
+    color: var(--offwhite);
+    border-radius: 5px;
+}
+
+.leftcontaier .para-one,
+.leftcontaier .para-tow {
+    margin: 0 0 20px 20px;
+    width: 80%;
+    font-size: 20px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    line-height: 1cm;
+    transition: 0.3s ease-in-out;
+}
+
+.leftcontaier .para-one:hover,
+.leftcontaier .para-tow:hover {
+    transform: translateX(20px);
+    box-shadow: 0 10px 20px var(--gold-sand);
+}
+
+.heading .rightcontaier {
+    width: 50%;
+    background-image: url(../assets/right_background.jpeg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.buttons-links {
+    float: right;
+    margin: 20px;
+}
+
+.buttons-links .main-btn {
+    background-color: transparent;
+    all: unset;
+    color: var(--offwhite);
+    font-size: 20px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+.buttons-links .books-btn {
+    color: var(--str-gree);
+    background-color: var(--offwhite);
+    padding: 10px 20px;
+    margin-left: 10px;
+    border-radius: 7px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+    opacity: 0.5;
+}
+
+.buttons-links .books-btn:hover {
+    transform: scale(1.1);
+    opacity: 1;
+}
+
+.buttons-links .main-btn:hover {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+.mission {
+    background-image: url(../assets/mission_background.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+    text-align: center;
+    position: relative;
+}
+
+.mission::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+.mission>* {
+    position: relative;
+    z-index: 2;
+}
+
+.mission .ourmission {
+    font-family: 'Merriweather', serif;
+    font-size: 36px;
+    font-weight: 800;
+    color: var(--offwhite);
+    margin-bottom: 20px;
+    transition: 0.3s ease-in-out;
+    width: fit-content;
+}
+
+.mission .ourmission:hover {
+    color: var(--str-gree);
+    border-radius: 5px;
+    transform: scale(1.2);
+}
+
+.mission .para-mission {
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    line-height: 1.6;
+    color: var(--offwhite);
+    margin-bottom: 20px;
+    max-width: 800px;
+}
+
+.mission .sec-para-mission {
+    font-family: 'Roboto', sans-serif;
+    font-size: 22px;
+    color: var(--gold-sand);
+    margin-bottom: 20px;
+}
+
+.mission ul {
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    color: var(--offwhite);
+    margin-bottom: 30px;
+    max-width: 600px;
+}
+
+.mission ul li {
+    margin-bottom: 15px;
+    transition: 0.3s ease-in-out;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.mission ul li:hover {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.mission ul li i {
+    color: var(--gold-sand);
+    margin-right: 10px;
+    font-size: 24px;
+}
+
+.mission .last-mission {
+    font-family: 'Lora', serif;
+    font-size: 30px;
+    color: var(--offwhite);
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.4;
+}
+
+.contact-us {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    background-color: var(--offwhite);
+}
+
+.contact-us h1 {
+    margin: 40px 0 20px 20px;
+    align-self: center;
+    font-size: 40px;
+    color: var(--str-gree);
+    transition: 0.3s ease-in-out;
+    padding: 10px;
+}
+
+.contact-us h1:hover {
+    background-color: var(--gold-sand);
+    border-radius: 5px;
+}
+
+.contact-us .share-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.share-buttons .butt {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.share-buttons .butt p {
+    font-size: 30px;
+}
+
+.share-buttons .butt a {
+    align-self: center;
+}
+
+.share-buttons .butt a button {
+    font-size: 25px;
+    border: none;
+    padding: 10px;
+    background-color: var(--gold-sand);
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 20px 0 40px 0;
+    transition: 0.3s ease-in-out;
+}
+
+.butt a button:hover {
+    transform: scale(0.9);
+    box-shadow: 0 10px 20px var(--str-gree);
+}
+
+.contact-us .inputs {
+    display: flex;
+    flex-direction: column;
+}
+
+@keyframes movep {
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+.inputs .para-input {
+    font-size: 30px;
+    font-weight: 800;
+    align-self: center;
+    margin: 40px 0;
+    animation: movep 1s infinite 3s;
+    animation-play-state: running;
+    padding: 10px;
+    transition: 0.3s ease-in-out;
+}
+
+.inputs .para-input:hover {
+    animation-play-state: paused;
+    background-color: var(--str-gree);
+    border-radius: 5px;
+}
+
+.inputs textarea {
+    width: 80%;
+    height: 40vh;
+    align-self: center;
+    margin-bottom: 40px;
+    border-radius: 10px;
+    padding: 20px;
+    transition: 0.3s ease-in-out;
+}
+
+.inputs textarea:focus {
+    box-shadow: 0 10px 20px var(--str-gree);
+    transform: scale(1.1);
+}
+
+.footer a p {
+    padding: 0 10%;
+    background-color: var(--offwhite);
+    color: var(--str-gree);
+    width: 100%;
+    height: 10px;
+}
+
+.footer a {
+    text-align: center;
+    padding: 5px 0;
+}
+
+@media (max-width: 768px) {
+    .mission {
+        padding: 30px 15px;
+    }
+
+    .mission .ourmission {
+        font-size: 28px;
+    }
+
+    .mission .para-mission {
+        font-size: 16px;
+    }
+
+    .mission .sec-para-mission {
+        font-size: 20px;
+    }
+
+    .mission ul {
+        font-size: 18px;
+    }
+
+    .mission .last-mission {
+        font-size: 24px;
+    }
+}
+
+@media (max-width: 800px) {
+    .heading {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .heading .leftcontaier {
+        width: 100%;
+        padding: 20px;
+    }
+
+    .leftcontaier .about {
+        font-size: 24px;
+        margin: 10px 0 0 10px;
+        padding: 5px;
+    }
+
+    .leftcontaier .para-one,
+    .leftcontaier .para-tow {
+        font-size: 16px;
+        margin: 0 0 15px 10px;
+        width: 90%;
+        line-height: 1.5;
+    }
+
+    .heading .rightcontaier {
+        width: 100%;
+        min-height: 300px;
+    }
+
+    .buttons-links {
+        float: none;
+        margin: 10px;
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .buttons-links .main-btn {
+        font-size: 16px;
+    }
+
+    .buttons-links .books-btn {
+        font-size: 16px;
+        padding: 8px 15px;
+        margin-left: 0;
+    }
+
+    .contact-us {
+        padding: 20px;
+    }
+
+    .contact-us h1 {
+        font-size: 28px;
+        margin: 20px 0 10px 10px;
+        padding: 5px;
+    }
+
+    .contact-us .share-buttons {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .share-buttons .butt {
+        gap: 10px;
+    }
+
+    .share-buttons .butt p {
+        font-size: 20px;
+    }
+
+    .share-buttons .butt a button {
+        font-size: 18px;
+        padding: 8px;
+        margin: 10px 0 20px 0;
+    }
+
+    .inputs .para-input {
+        font-size: 24px;
+        margin: 20px 0;
+        padding: 5px;
+    }
+
+    .inputs textarea {
+        width: 90%;
+        height: 30vh;
+        margin-bottom: 20px;
+        padding: 15px;
+    }
+
+    .footer a {
+        padding: 3px 0;
+    }
+
+    .footer a p {
+        font-size: 14px;
+        height: auto;
+        padding: 0 5%;
+    }
+}

@@ -1,0 +1,318 @@
+@media screen and (max-width: 480px) {
+    .upove {
+        flex-direction: column;
+        height: auto;
+        padding-bottom: 20px;
+    }
+
+    .upove .leftsub,
+    .upove .rightsub {
+        width: 100%;
+    }
+
+    .upove .leftsub {
+        padding: 15px;
+    }
+
+    .leftsub .nav {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav .sub2 ul {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+
+    .nav .sub2 ul li {
+        padding: 8px;
+    }
+
+    .upove h1 {
+        font-size: 2rem;
+        margin: 1rem 0;
+        text-align: center;
+    }
+
+    .upove p {
+        font-size: 0.9rem;
+        margin: 0 0 1rem 0;
+        text-align: center;
+    }
+
+    .form-inline {
+        flex-direction: column;
+        margin-left: 0;
+        gap: 10px;
+        align-items: center;
+    }
+
+    .input-field {
+        width: 80%;
+        padding: 8px;
+        font-size: 14px;
+    }
+
+    .btn {
+        width: 40%;
+        padding: 8px;
+        font-size: 14px;
+    }
+
+    .upove .links {
+        margin-top: 2rem;
+        align-items: center;
+    }
+
+    .links .logos {
+        margin: 10px 0;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .logos a {
+        font-size: 24px;
+    }
+
+    .rightsub {
+        height: 50vh;
+    }
+
+    .buttons {
+        float: none;
+        text-align: center;
+        margin: 10px 0;
+    }
+
+    .buttons .bt-one,
+    .buttons .bt-tow {
+        font-size: 14px;
+        padding: 6px 12px;
+    }
+
+    .search {
+        height: 15vh;
+    }
+
+    .search form {
+        width: 90%;
+        height: 40px;
+    }
+
+    .search form input {
+        padding: 6px;
+        font-size: 14px;
+    }
+
+    .search form button {
+        padding: 6px 15px;
+        font-size: 14px;
+    }
+
+    .search form i {
+        padding: 6px 10px;
+        font-size: 16px;
+    }
+
+    .trusted-section {
+        margin-top: -22px;
+    }
+
+    .trusted-section p {
+        font-size: 14px;
+        text-align: center;
+        margin: 1rem 10px 0.5rem;
+    }
+
+    .trusted-section .trusted-list {
+        gap: 5px;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .trusted-list img {
+        width: 50px;
+        height: 50px;
+        margin: 0.5rem 0;
+    }
+
+    .best-section {
+        padding: 1rem 0;
+    }
+
+    .best-section h3 {
+        font-size: 20px;
+        margin-bottom: 1rem;
+        text-align: center;
+    }
+
+    .books {
+        gap: 1.5rem;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .book {
+        width: 160px;
+    }
+
+    .book .book-img {
+        padding: 10px;
+        width: 100%;
+    }
+
+    .book-img img {
+        width: 100%;
+    }
+
+    .book-description {
+        gap: 5px;
+    }
+
+    .name {
+        font-size: 14px;
+    }
+
+    .price {
+        font-size: 12px;
+    }
+
+    .des {
+        font-size: 11px;
+    }
+
+    .recomendations .top {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .top img {
+        width: 100%;
+        height: auto;
+    }
+
+    .explain .main p {
+        font-size: 24px;
+        text-align: center;
+    }
+
+    .explain .secondary {
+        font-size: 0.9rem;
+        gap: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .explain .secondary p {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 10px;
+        width: 80%;
+        max-width: 300px;
+        margin: 0;
+    }
+
+    .explain .secondary p i {
+        font-size: 1rem;
+        flex-shrink: 0;
+        width: 24px;
+        text-align: center;
+    }
+
+    .buttom {
+        flex-direction: column;
+        height: auto;
+        padding: 15px;
+        margin-top: 20px;
+    }
+
+    .buttom .image {
+        display: none;
+    }
+
+    .buttom .image img {
+        width: 100%;
+        height: auto;
+        max-height: 150px;
+    }
+
+    .buttom .discus {
+        margin-right: 0;
+    }
+
+    .discus h3 {
+        font-size: 1.2rem;
+        text-align: center;
+    }
+
+    .discus p {
+        font-size: 14px;
+        line-height: 1.3;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-height: 200px;
+        margin: 0 10px;
+    }
+
+    .find-book {
+        height: 50vh;
+    }
+
+    .card {
+        width: 90%;
+        height: 50%;
+        padding: 10px;
+    }
+
+    .card p {
+        font-size: 16px;
+        margin: 1rem 0 1.5rem;
+    }
+
+    .card button {
+        width: 50%;
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    .content {
+        flex-direction: column;
+        padding: 15px;
+        align-items: center;
+    }
+
+    .content .leftside h4 {
+        font-size: 20px;
+        margin: 1.5rem 0 10px;
+        text-align: center;
+    }
+
+    .leftside .des,
+    .leftside .location {
+        font-size: 12px;
+        text-align: center;
+    }
+
+    .content .rightside table {
+        margin-top: 1rem;
+    }
+
+    .rightside table thead th {
+        font-size: 14px;
+        padding: 0 10px 15px 0;
+    }
+
+    .rightside table td {
+        font-size: 12px;
+        padding-bottom: 8px;
+    }
+
+    .footer a p {
+        font-size: 12px;
+        padding: 5px 0;
+        text-align: center;
+    }
+}

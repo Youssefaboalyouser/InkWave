@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User-Profile</title>
+    <link rel="stylesheet" href="css/user_profile_style.css" />
+</head>
+
+<body>
+    <div class="page-wrapper">
+        <nav class="navbar">
+            <a href="index.html">Main</a>
+            <a href="sign In.html">Sign In</a>
+            <a href="sign up.html">Sign Up</a>
+            <a href="books.html">Books</a>
+            <a href="purshes.html">Purshes</a>
+            <a href="user_profile.html">User profile</a>
+            <a href="contact.html">About Us</a>
+        </nav>
+        <div class="container">
+            <h4 class="title">Account settings</h4>
+            <div class="card tabs-wrapper">
+                <!-- Radio buttons (hidden) -->
+                <input type="radio" name="tab" id="tab1" checked />
+                <input type="radio" name="tab" id="tab2" />
+                <input type="radio" name="tab" id="tab3" />
+                <input type="radio" name="tab" id="tab4" />
+                <input type="radio" name="tab" id="tab5" />
+                <input type="radio" name="tab" id="tab6" />
+                <input type="radio" name="tab" id="tab7" />
+
+                <!-- Sidebar Tabs -->
+                <div class="sidebar">
+                    <label for="tab1" class="sidebar-link">General</label>
+                    <label for="tab2" class="sidebar-link">Change password</label>
+                    <label for="tab3" class="sidebar-link">Info</label>
+                    <label for="tab4" class="sidebar-link">Social links</label>
+                    <label for="tab5" class="sidebar-link">Notifications</label>
+                    <label for="tab6" class="sidebar-link">Add Book</label>
+                    <label for="tab7" class="sidebar-link">Delete & List Books</label>
+                </div>
+
+                <!-- Tab Contents -->
+                <div class="content">
+                    <div class="tab-content">
+                        <!-- General Tab -->
+                        <div class="tab tab1">
+                            <div class="profile-section">
+                                <img src="assets/user_image.jpg" alt="Profile" class="profile-img" />
+                                <div class="profile-actions">
+                                    <label class="btn btn-outline-primary">
+                                        Upload new photo
+                                        <input type="file" class="file-input" />
+                                    </label>
+                                    <button type="button" class="btn btn-default">Reset</button>
+                                    <div class="text-light">
+                                        Allowed JPG, GIF or PNG. Max size of 800K
+                                    </div>
+                                </div>
+                            </div>
+                            <hr class="divider" />
+                            <div class="form-section">
+                                <div class="form-group">
+                                    <label class="form-label">Username</label>
+                                    <input type="text" class="form-control" value="Youssef" />
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">Name</label>
+                                    <input type="text" class="form-control" value="Youssef-Aboalyouser" />
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">E-mail</label>
+                                    <input type="text" class="form-control" value="youssefaboalyouser@gmail.com" />
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">Favorite book genre</label>
+                                    <input type="text" class="form-control" value="Romantic" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Change Password Tab -->
+                        <div class="tab tab2">
+                            <div class="form-section">
+                                <div class="form-group">
+                                    <label class="form-label">Current password</label>
+                                    <input type="password" class="form-control" />
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">New password</label>
+                                    <input type="password" class="form-control" />
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">Repeat new password</label>
+                                    <input type="password" class="form-control" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Info Tab -->
+                        <div class="tab tab3">
+                            <div class="form-section">
+                                <div class="form-group">
+                                    <label class="form-label">About yourself</label>
+                                    <textarea class="form-control"
+                                        rows="5">I'm an avid reader with a passion for discovering new worlds through words. Whether it's fiction, non-fiction, or anything in between, I find joy in every page. If you're a fellow book lover, you're in the right place to share and explore stories together!</textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">Birthday</label>
+                                    <input type="text" class="form-control" value="October 13, 2004" />
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">Country</label>
+                                    <select class="form-control">
+                                        <option>USA</option>
+                                        <option selected>Egypt</option>
+                                        <option>UK</option>
+                                        <option>Germany</option>
+                                        <option>France</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <hr class="divider" />
+                            <div class="form-section">
+                                <h6 class="section-title">Contacts</h6>
+                                <div class="form-group">
+                                    <label class="form-label">Phone</label>
+                                    <input type="text" class="form-control" value="+20 127 394 3443" />
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">Website</label>
+                                    <input type="text" class="form-control"
+                                        value="https://youssefaboalyouser.github.io/portfolio-task/" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Social Links Tab -->
+                        <div class="tab tab4">
+                            <div class="form-section">
+                                <div class="form-group">
+                                    <label class="form-label">Twitter</label>
+                                    <input type="text" class="form-control" value="https://twitter.com/user" />
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">Facebook</label>
+                                    <input type="text" class="form-control" value="https://www.facebook.com/user" />
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">Google+</label>
+                                    <input type="text" class="form-control" value="" />
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">LinkedIn</label>
+                                    <input type="text" class="form-control" value="" />
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">Instagram</label>
+                                    <input type="text" class="form-control" value="https://www.instagram.com/user" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Notifications Tab -->
+                        <div class="tab tab5">
+                            <div class="form-section">
+                                <h6 class="section-title">Activity</h6>
+                                <div class="form-group">
+                                    <label class="switcher">
+                                        <input type="checkbox" class="switcher-input" checked />
+                                        <span class="switcher-indicator"></span>
+                                        <span class="switcher-label">Email me when someone comments on my article</span>
+                                    </label>
+                                </div>
+                                <div class="form-group">
+                                    <label class="switcher">
+                                        <input type="checkbox" class="switcher-input" checked />
+                                        <span class="switcher-indicator"></span>
+                                        <span class="switcher-label">Email me when someone answers on my forum
+                                            thread</span>
+                                    </label>
+                                </div>
+                                <div class="form-group">
+                                    <label class="switcher">
+                                        <input type="checkbox" class="switcher-input" />
+                                        <span class="switcher-indicator"></span>
+                                        <span class="switcher-label">Email me when someone follows me</span>
+                                    </label>
+                                </div>
+                            </div>
+                            <hr class="divider" />
+                            <div class="form-section">
+                                <h6 class="section-title">Application</h6>
+                                <div class="form-group">
+                                    <label class="switcher">
+                                        <input type="checkbox" class="switcher-input" checked />
+                                        <span class="switcher-indicator"></span>
+                                        <span class="switcher-label">News and announcements</span>
+                                    </label>
+                                </div>
+                                <div class="form-group">
+                                    <label class="switcher">
+                                        <input type="checkbox" class="switcher-input" />
+                                        <span class="switcher-indicator"></span>
+                                        <span class="switcher-label">Weekly product updates</span>
+                                    </label>
+                                </div>
+                                <div class="form-group">
+                                    <label class="switcher">
+                                        <input type="checkbox" class="switcher-input" checked />
+                                        <span class="switcher-indicator"></span>
+                                        <span class="switcher-label">Weekly blog digest</span>
+                                    </label>
+                                </div>
+                                <div class="form-group">
+                                    <label class="switcher">
+                                        <input type="checkbox" class="switcher-input" checked />
+                                        <span class="switcher-indicator"></span>
+                                        <span class="switcher-label">Inform me when new collection is here</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Add Book Tab -->
+                        <div class="tab tab6">
+                            <div class="form-section">
+                                <h6 class="section-title">Add New Book</h6>
+                                <div class="form-group">
+                                    <label class="form-label">Book Name</label>
+                                    <input type="text" class="form-control" placeholder="Enter book name" />
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">Author</label>
+                                    <input type="text" class="form-control" placeholder="Enter author name" />
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">Price for Borrow (USD)</label>
+                                    <input type="number" class="form-control" placeholder="Enter borrow price"
+                                        step="0.01" />
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">Price for Buy (USD)</label>
+                                    <input type="number" class="form-control" placeholder="Enter buy price"
+                                        step="0.01" />
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">Description</label>
+                                    <textarea class="form-control" rows="4"
+                                        placeholder="Enter book description"></textarea>
+                                </div>
+                                <div class="action-buttons">
+                                    <button type="button" class="btn btn-primary">Add Book</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Delete & List Books Tab -->
+                        <div class="tab tab7">
+                            <div class="form-section">
+                                <h6 class="section-title">Delete Book</h6>
+                                <div class="form-group">
+                                    <label class="form-label">Book Name</label>
+                                    <input type="text" class="form-control" placeholder="Enter book name to delete" />
+                                </div>
+                                <div class="action-buttons">
+                                    <button type="button" class="btn btn-primary">Delete Book</button>
+                                    <a href="books.html" class="btn btn-default">View Book List</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="action-buttons">
+                <button type="button" class="btn btn-primary">Save changes</button>
+                <button type="button" class="btn btn-default">Cancel</button>
+            </div>
+        </div>
+        <footer class="footer">
+            <a href="https://youssefaboalyouser.github.io/portfolio-task/" target="_blank">
+                <p>2025 © Youssef_Aboalyouser, All Rights reserved</p>
+            </a>
+        </footer>
+    </div>
+</body>
+
+</html>
