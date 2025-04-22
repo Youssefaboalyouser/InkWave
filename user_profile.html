@@ -15,7 +15,7 @@
             <a href="sign In.html">Sign In</a>
             <a href="sign up.html">Sign Up</a>
             <a href="books.html">Books</a>
-            <a href="purshes.html">Purshes</a>
+            <a href="purshes.html">Purchases</a>
             <a href="user_profile.html">User profile</a>
             <a href="contact.html">About Us</a>
         </nav>
@@ -30,6 +30,7 @@
                 <input type="radio" name="tab" id="tab5" />
                 <input type="radio" name="tab" id="tab6" />
                 <input type="radio" name="tab" id="tab7" />
+                <input type="radio" name="tab" id="tab8" />
 
                 <!-- Sidebar Tabs -->
                 <div class="sidebar">
@@ -40,6 +41,7 @@
                     <label for="tab5" class="sidebar-link">Notifications</label>
                     <label for="tab6" class="sidebar-link">Add Book</label>
                     <label for="tab7" class="sidebar-link">Delete & List Books</label>
+                    <label for="tab8" class="sidebar-link">Advanced</label>
                 </div>
 
                 <!-- Tab Contents -->
@@ -48,11 +50,11 @@
                         <!-- General Tab -->
                         <div class="tab tab1">
                             <div class="profile-section">
-                                <img src="assets/user_image.jpg" alt="Profile" class="profile-img" />
+                                <img src="assets/default_user.png" alt="Profile" class="profile-img" />
                                 <div class="profile-actions">
                                     <label class="btn btn-outline-primary">
                                         Upload new photo
-                                        <input type="file" class="file-input" />
+                                        <input type="file" class="file-input" accept="image/*" />
                                     </label>
                                     <button type="button" class="btn btn-default">Reset</button>
                                     <div class="text-light">
@@ -104,18 +106,20 @@
                             <div class="form-section">
                                 <div class="form-group">
                                     <label class="form-label">About yourself</label>
-                                    <textarea class="form-control"
-                                        rows="5">I'm an avid reader with a passion for discovering new worlds through words. Whether it's fiction, non-fiction, or anything in between, I find joy in every page. If you're a fellow book lover, you're in the right place to share and explore stories together!</textarea>
+                                    <textarea class="form-control" rows="5"
+                                        placeholder="Tell us about yourself"></textarea>
                                 </div>
                                 <div class="form-group">
                                     <label class="form-label">Birthday</label>
-                                    <input type="text" class="form-control" value="October 13, 2004" />
+                                    <input type="text" class="form-control"
+                                        placeholder="Enter your birthday (e.g., MM/DD/YYYY)" />
                                 </div>
                                 <div class="form-group">
                                     <label class="form-label">Country</label>
                                     <select class="form-control">
+                                        <option value="" selected disabled>Select your country</option>
                                         <option>USA</option>
-                                        <option selected>Egypt</option>
+                                        <option>Egypt</option>
                                         <option>UK</option>
                                         <option>Germany</option>
                                         <option>France</option>
@@ -127,12 +131,11 @@
                                 <h6 class="section-title">Contacts</h6>
                                 <div class="form-group">
                                     <label class="form-label">Phone</label>
-                                    <input type="text" class="form-control" value="+20 127 394 3443" />
+                                    <input type="text" class="form-control" placeholder="Enter your phone number" />
                                 </div>
                                 <div class="form-group">
                                     <label class="form-label">Website</label>
-                                    <input type="text" class="form-control"
-                                        value="https://youssefaboalyouser.github.io/portfolio-task/" />
+                                    <input type="text" class="form-control" placeholder="Enter your website URL" />
                                 </div>
                             </div>
                         </div>
@@ -142,23 +145,23 @@
                             <div class="form-section">
                                 <div class="form-group">
                                     <label class="form-label">Twitter</label>
-                                    <input type="text" class="form-control" value="https://twitter.com/user" />
+                                    <input type="text" class="form-control" placeholder="Enter your Twitter URL" />
                                 </div>
                                 <div class="form-group">
                                     <label class="form-label">Facebook</label>
-                                    <input type="text" class="form-control" value="https://www.facebook.com/user" />
+                                    <input type="text" class="form-control" placeholder="Enter your Facebook URL" />
                                 </div>
                                 <div class="form-group">
                                     <label class="form-label">Google+</label>
-                                    <input type="text" class="form-control" value="" />
+                                    <input type="text" class="form-control" placeholder="Enter your Google+ URL" />
                                 </div>
                                 <div class="form-group">
                                     <label class="form-label">LinkedIn</label>
-                                    <input type="text" class="form-control" value="" />
+                                    <input type="text" class="form-control" placeholder="Enter your LinkedIn URL" />
                                 </div>
                                 <div class="form-group">
                                     <label class="form-label">Instagram</label>
-                                    <input type="text" class="form-control" value="https://www.instagram.com/user" />
+                                    <input type="text" class="form-control" placeholder="Enter your Instagram URL" />
                                 </div>
                             </div>
                         </div>
@@ -252,7 +255,7 @@
                                         placeholder="Enter book description"></textarea>
                                 </div>
                                 <div class="action-buttons">
-                                    <button type="button" class="btn btn-primary">Add Book</button>
+                                    <button type="button" class="btn btn-primary add-book-btn">Add Book</button>
                                 </div>
                             </div>
                         </div>
@@ -266,8 +269,41 @@
                                     <input type="text" class="form-control" placeholder="Enter book name to delete" />
                                 </div>
                                 <div class="action-buttons">
-                                    <button type="button" class="btn btn-primary">Delete Book</button>
+                                    <button type="button" class="btn btn-primary delete-book-btn">Delete Book</button>
                                     <a href="books.html" class="btn btn-default">View Book List</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Advanced Tab -->
+                        <div class="tab tab8">
+                            <div class="form-section">
+                                <h6 class="section-title">Account Actions</h6>
+                                <div class="action-buttons">
+                                    <button type="button" class="btn btn-primary logout-btn">Log Out</button>
+                                    <button type="button" class="btn btn-danger delete-account-btn">Delete
+                                        Account</button>
+                                </div>
+                            </div>
+                            <hr class="divider" />
+                            <div class="form-section">
+                                <h6 class="section-title">Invite New User</h6>
+                                <div class="form-group">
+                                    <label class="form-label">Username</label>
+                                    <input type="text" class="form-control invite-username"
+                                        placeholder="Enter username" />
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">Email</label>
+                                    <input type="email" class="form-control invite-email" placeholder="Enter email" />
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">Password</label>
+                                    <input type="password" class="form-control invite-password"
+                                        placeholder="Enter password" />
+                                </div>
+                                <div class="action-buttons">
+                                    <button type="button" class="btn btn-primary invite-btn">Send Invitation</button>
                                 </div>
                             </div>
                         </div>
@@ -275,7 +311,7 @@
                 </div>
             </div>
             <div class="action-buttons">
-                <button type="button" class="btn btn-primary">Save changes</button>
+                <button type="button" class="btn btn-primary save-changes-btn" onclick="">Save changes</button>
                 <button type="button" class="btn btn-default">Cancel</button>
             </div>
         </div>
@@ -285,6 +321,7 @@
             </a>
         </footer>
     </div>
+    <script src="javascript/user_profile.js"></script>
 </body>
 
 </html>

@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Display</title>
+    <style>
+        :root {
+            --offwhite: #f8f2e8;
+            --str-gree: #336361;
+            --gold-sand: #eed16c;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        a {
+            all: unset;
+            cursor: pointer;
+        }
+
+        ul li {
+            list-style: none;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        ::-webkit-scrollbar {
+            width: 15px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background-color: #000000;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background-color: var(--str-gree);
+            border-radius: 5px;
+        }
+
+        ::selection {
+            color: var(--str-gree);
+            background-color: var(--gold-sand);
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: var(--offwhite);
+            display: flex;
+            flex-direction: column;
+            padding-top: 70px;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-around;
+            background-color: #000000;
+            height: 50px;
+            align-items: center;
+            width: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            padding: 0 20px;
+        }
+
+        .navbar a {
+            color: var(--offwhite);
+            align-self: center;
+            transition: 0.3s ease-in-out;
+            cursor: pointer;
+            padding: 5px;
+        }
+
+        .navbar a:hover {
+            background-color: var(--str-gree);
+            border-radius: 5px;
+        }
+
+        .search-container {
+            margin-bottom: 40px;
+            align-self: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 40px 0 80px 0;
+        }
+
+        .search-container form {
+            width: 600px;
+            height: 55px;
+            display: flex;
+        }
+
+        .search-container form input {
+            flex: 1;
+            border: none;
+            outline: none;
+            padding: 10px;
+        }
+
+        .search-container form button {
+            background-color: var(--str-gree);
+            padding: 10px 50px;
+            border: none;
+            outline: none;
+            letter-spacing: 1px;
+            cursor: pointer;
+            font-size: 20px;
+            transition: 0.3s ease-in-out;
+        }
+
+        .search-container form button:hover {
+            background-color: var(--gold-sand);
+            transform: scale(0.9);
+            box-shadow: 0 10px 20px var(--str-gree);
+        }
+
+        .search-container form i {
+            align-self: center;
+            padding: 10px 20px;
+            color: var(--str-gree);
+            font-size: 20px;
+        }
+
+        #bookResults {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .book-card {
+            width: 300px;
+            transition: 0.3s ease-in-out;
+        }
+
+        .book-card .book-image {
+            background-color: var(--str-gree);
+            border-radius: 10px;
+            padding: 20px;
+            width: 220px;
+            text-align: center;
+        }
+
+        .book-cover {
+            width: 100%;
+            height: auto;
+            margin-bottom: 10px;
+            border-radius: 5px;
+        }
+
+        .book-description {
+            margin-top: 10px;
+            display: flex;
+            flex-direction: column;
+            gap: 7px;
+        }
+
+        .book-details {
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+        }
+
+        .book-title {
+            font-size: 18px;
+            font-weight: bold;
+            transition: .3s ease-in-out;
+        }
+
+        .book-author {
+            color: #555;
+            margin-bottom: 5px;
+        }
+
+        .book-price {
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .book-description {
+            font-size: 14px;
+            margin: 0 0 10px 1px;
+        }
+
+        .book-card:hover {
+            transform: translateY(-20px);
+            box-shadow: 0 10px 20px rgb(0, 0, 0, 0.19);
+        }
+
+        .book-card:hover .book-title,
+        .book-card:hover .book-price {
+            color: var(--str-gree);
+        }
+
+        .footer a p {
+            padding: 0 10%;
+            background-color: var(--offwhite);
+            color: var(--str-gree);
+            width: 100%;
+            height: 10px;
+        }
+
+        .footer a {
+            text-align: center;
+            padding: 5px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar">
+        <a href="index.html">Main</a>
+        <a href="sign In.html">Sign In</a>
+        <a href="sign up.html">Sign Up</a>
+        <a href="books.html">Books</a>
+        <a href="purshes.html">Purshes</a>
+        <a href="user_profile.html">User profile</a>
+        <a href="contact.html">About Us</a>
+    </nav>
+    <div class="search-container">
+        <form id="searchForm">
+            <i class='bx bx-search-alt-2'></i>
+            <input type="text" id="searchInput" placeholder="Search for books..." value="مملكة البلاغه">
+            <button type="button" onclick="searchBooks()">Search</button>
+        </form>
+    </div>
+
+    <div id="bookResults"></div>
+    <footer class="footer">
+        <a href="https://youssefaboalyouser.github.io/portfolio-task/" target="_blank">
+            <p>2025 &copy; Youssef_Aboalyouser, All Rights reserved</p>
+        </a>
+    </footer>
+    <script>
+        const API_KEY = 'AIzaSyCPqN2mAZ134yn8xDJoZZK1-WDS6pDUWMw';
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const isLoggedIn = localStorage.getItem("loggedIn") === "true";
+            const navbar = document.querySelector(".navbar");
+
+            // Navbar link management
+            if (navbar) {
+                const navLinks = navbar.querySelectorAll("a");
+                navLinks.forEach(link => {
+                    const linkText = link.textContent.trim().toLowerCase();
+                    if (isLoggedIn) {
+                        if (linkText === "sign in" || linkText === "sign up") {
+                            link.remove();
+                        }
+                    } else {
+                        if (linkText === "user profile") {
+                            link.remove();
+                        }
+                    }
+                });
+            }
+        });
+
+        async function searchBooks(event) {
+            if (event) event.preventDefault();
+
+            const searchTerm = document.getElementById('searchInput').value.trim().toLowerCase();
+            if (!searchTerm) return;
+
+            try {
+                // Fetch from Google Books API
+                const response = await fetch(`https://www.googleapis.com/books/v1/volumes?q=${encodeURIComponent(searchTerm)}&maxResults=12&key=${API_KEY}`);
+                if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
+                const data = await response.json();
+                let books = data.items || [];
+
+                displayBooks(books);
+            } catch (error) {
+                console.error('Error fetching books:', error);
+                document.getElementById('bookResults').innerHTML = '<p>Error loading books. Please try again.</p>';
+            }
+        }
+
+        function displayBooks(books) {
+            const bookResults = document.getElementById('bookResults');
+
+            if (!books || books.length === 0) {
+                bookResults.innerHTML = '<p>No books found. Try a different search.</p>';
+                return;
+            }
+
+            bookResults.innerHTML = books.map(book => {
+                const volumeInfo = book.volumeInfo || {};
+                const saleInfo = book.saleInfo || {};
+
+                const imageUrl = volumeInfo.imageLinks?.thumbnail ||
+                    volumeInfo.imageLinks?.smallThumbnail ||
+                    'https://via.placeholder.com/150x200?text=No+Cover';
+
+                let priceInfo = '50.00 EGP';
+                if (saleInfo.listPrice) {
+                    priceInfo = `${saleInfo.listPrice.amount} ${saleInfo.listPrice.currencyCode}`;
+                } else if (saleInfo.retailPrice) {
+                    priceInfo = `${saleInfo.retailPrice.amount} ${saleInfo.retailPrice.currencyCode}`;
+                }
+
+                let description = volumeInfo.description ||
+                    'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.';
+                if (description.length > 200) {
+                    description = description.substring(0, 200) + '...';
+                }
+
+                const bookId = book.id || '';
+
+                return `
+                    <div class="book-card">
+                        <div class="book-image">
+                            <a href="book-details.html?bookId=${encodeURIComponent(bookId)}"><img src="${imageUrl}" alt="${volumeInfo.title || 'Unknown Title'}" class="book-cover"></a>
+                        </div>
+                        <div class="book-description">
+                            <div class="book-details">
+                                <p class="book-title">${volumeInfo.title || 'Unknown Title'}</p>
+                                <p class="book-author">${volumeInfo.authors?.join(', ') || 'Unknown Author'}</p>
+                                <p class="book-price">${priceInfo}</p>
+                            </div>
+                            <div class="desc">
+                                <p class="book-description">${description}</p>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        document.getElementById('searchInput').addEventListener('keypress', function (e) {
+            if (e.key === 'Enter') {
+                e.preventDefault();
+                searchBooks();
+            }
+        });
+
+        document.getElementById('searchForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+            searchBooks();
+        });
+
+        window.onload = function () {
+            searchBooks();
+        };
+    </script>
+</body>
+
+</html>

@@ -16,6 +16,14 @@
     <!-- style -->
     <link rel="stylesheet" href="css/contact_style.css">
     <link rel="stylesheet" href="css/style.css">
+    <!-- defualt mail link -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+    </script>
+    <script type="text/javascript">
+        (function () {
+            emailjs.init("49Hzu5xinMAAhSG1U");
+        })();
+    </script>
 </head>
 
 <body>
@@ -109,8 +117,8 @@
         <div class="inputs">
             <p class="para-input"><span>OR</span> Send To Us</p>
             <textarea name="Complains"
-                placeholder="Write here Your complains, advaice and feedback to improve ourselves"></textarea>
-            <button class="submit-complain">Send</button>
+                placeholder="Write here Your complains, advaice and feedback to improve ourselves" id="comp"></textarea>
+            <button class="submit-complain" onclick="sendcompliancemail()">Send</button>
         </div>
     </section>
     <!-- ########################## -->
@@ -122,6 +130,8 @@
             </p>
         </a>
     </footer>
+
+    <script src="javascript/about_us.js"></script>
 </body>
 
 </html>

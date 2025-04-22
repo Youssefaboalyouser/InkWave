@@ -63,6 +63,8 @@
 .leftcontaier .para-tow:hover {
     transform: translateX(20px);
     box-shadow: 0 10px 20px var(--gold-sand);
+    padding: 10px;
+    border-radius: 5px;
 }
 
 .heading .rightcontaier {

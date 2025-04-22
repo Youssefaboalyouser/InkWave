@@ -275,55 +275,6 @@ html {
     transform: scale(1.1);
 }
 
-/* --------------------------------------- */
-.search {
-    width: 100%;
-    height: 30vh;
-    background-color: var(--offwhite);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.search form {
-    width: 600px;
-    height: 55px;
-    display: flex;
-}
-
-.search form input {
-    flex: 1;
-    border: none;
-    outline: none;
-    padding: 10px;
-}
-
-.search form button {
-    background-color: var(--str-gree);
-    padding: 10px 50px;
-    border: none;
-    outline: none;
-    letter-spacing: 1px;
-    cursor: pointer;
-    font-size: 20px;
-    transition: 0.3s ease-in-out;
-}
-.search form button:hover{
-    background-color: var(--gold-sand);
-    transform: scale(0.9);
-    box-shadow: 0 10px 20px var(--str-gree);
-
-}
-
-.search form i {
-    align-self: center;
-    padding: 10px 20px;
-    color: var(--str-gree);
-    font-size: 20px;
-}
-
-/* --------------------------------------- */
-
 
 .trusted-section {
     display: flex;
@@ -377,7 +328,6 @@ html {
 
 .book .book-img {
     background-color: var(--str-gree);
-    /* Match reference color */
     border-radius: 10px;
     padding: 20px;
     width: 220px;

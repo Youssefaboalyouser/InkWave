@@ -509,3 +509,23 @@ textarea.form-control {
         font-size: 12px;
     }
 }
+
+.btn-danger {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    cursor: pointer;
+}
+
+.btn-danger:hover {
+    background-color: #c82333;
+}
+
+.invite-username,
+.invite-email,
+.invite-password {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+}

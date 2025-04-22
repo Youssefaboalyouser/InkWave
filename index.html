@@ -16,6 +16,14 @@
     <!-- style -->
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/mediaquery.css">
+    <!-- defualt mail link -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+    </script>
+    <script type="text/javascript">
+        (function () {
+            emailjs.init("49Hzu5xinMAAhSG1U");
+        })();
+    </script>
 </head>
 
 <body>
@@ -64,7 +72,7 @@
             <p class="secondarypara">Start your journey into the world of words.find, read, and enjoy!</p>
             <div class="form-inline">
                 <input type="text" name="Email" id="email" placeholder="Email" class="input-field">
-                <input type="button" value="Contact Us" class="btn">
+                <input type="button" value="Contact Us" class="btn" onclick="sendmail()">
             </div>
             <div class="links">
                 <p class="thirdpara">Discover more</p>
@@ -93,17 +101,10 @@
             <img src="assets/lib.png" alt="img" width="90px" height="100px">
         </div>
     </section>
-    <section class="search">
-        <form>
-            <i class='bx bx-search-alt-2'></i>
-            <input type="search" name="search" class="search-filed" placeholder="Find your next adventure...">
-            <button type="submit">Search</button>
-        </form>
-    </section>
     <section class="best-section" id="BestBooks">
         <h3 class="best">Our Best Selling Books</h3>
         <div class="books">
-            <div class="book">
+            <!-- <div class="book">
                 <div class="book-img">
                     <a href="book-details.html"><img src="assets/Book1.jpg" alt="Rich Dad and Poor Dad"></a>
                 </div>
@@ -117,7 +118,7 @@
                     </div>
                 </div>
             </div>
-            <!-- =============== -->
+
             <div class="book">
                 <div class="book-img">
                     <a href="book-details.html"><img src="assets/Book2.jpg" alt="Rich Dad and Poor Dad"></a>
@@ -132,7 +133,7 @@
                     </div>
                 </div>
             </div>
-            <!-- ============= -->
+    
             <div class="book">
                 <div class="book-img">
                     <a href="book-details.html"><img src="assets/Book3.jpg" alt="Rich Dad and Poor Dad"></a>
@@ -147,7 +148,7 @@
                     </div>
                 </div>
             </div>
-            <!-- ==================== -->
+
             <div class="book">
                 <div class="book-img">
                     <a href="book-details.html"><img src="assets/Book4.jpg" alt="Rich Dad and Poor Dad"></a>
@@ -161,7 +162,7 @@
                         <p class="des" style="float: right;">المماليك، التاريخ، الحب، الخيانة</p>
                     </div>
                 </div>
-            </div>
+            </div> -->
         </div>
     </section>
     <section class="recomendations" id="suggestions">
@@ -252,6 +253,18 @@
             </p>
         </a>
     </footer>
+
+
+    <script src="javascript/index.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const userData = JSON.parse(localStorage.getItem("user"));
+            if (userData && userData.profilePhoto) {
+                const profileImage = document.querySelector(".user-profile img");
+                if (profileImage) profileImage.src = userData.profilePhoto;
+            }
+        });
+    </script>
 </body>
 
 </html>
