@@ -1,4 +1,3 @@
-// book_details.js
 const API_KEY = 'AIzaSyCPqN2mAZ134yn8xDJoZZK1-WDS6pDUWMw'; // Google Books API key
 
 document.addEventListener("DOMContentLoaded", async function () {
@@ -105,7 +104,6 @@ document.addEventListener("DOMContentLoaded", async function () {
                 }
                 // Simulate adding to purchases
                 alert(`You have chosen to ${select.value} "${bookData.title}" for $${select.value === "borrow" ? bookData.borrowPrice : bookData.buyPrice}.`);
-                // Optionally redirect to purchases page
                 // window.location.href = "purshes.html";
             });
         }

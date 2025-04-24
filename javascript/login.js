@@ -12,6 +12,12 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
+    const adminData = {
+        AdminName: "Youssef Aboalyouser",
+        AdminEmail: "youssefaboalyouser@gmail.com",
+        AdminPass: "InKwave"
+    };
+
     const form = document.querySelector("form");
     const usernameInput = document.querySelector(".username");
     const passwordInput = document.querySelector(".password");
@@ -34,6 +40,12 @@ document.addEventListener("DOMContentLoaded", function () {
             enteredUsername === savedUser.username &&
             enteredPassword === savedUser.password
         ) {
+            // Update isAdmin status for admin credentials
+            if (enteredUsername === adminData.AdminName && enteredPassword === adminData.AdminPass) {
+                savedUser.isAdmin = true;
+                localStorage.setItem("user", JSON.stringify(savedUser));
+            }
+
             // Store session flag
             localStorage.setItem("loggedIn", "true");
 

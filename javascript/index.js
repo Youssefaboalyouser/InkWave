@@ -1,5 +1,4 @@
-// index.js
-const API_KEY = 'AIzaSyCPqN2mAZ134yn8xDJoZZK1-WDS6pDUWMw'; // Google Books API key
+const API_KEY = 'AIzaSyCPqN2mAZ134yn8xDJoZZK1-WDS6pDUWMw'; //api key
 
 document.addEventListener("DOMContentLoaded", function () {
     const isLoggedIn = localStorage.getItem("loggedIn") === "true";
@@ -37,25 +36,25 @@ document.addEventListener("DOMContentLoaded", function () {
                 </div>
             `;
         }
-    } else {
-        // Restore Sign In and Sign Up buttons when not logged in
-        if (buttonsDiv) {
-            buttonsDiv.innerHTML = `
-                <a href="sign In.html"><button class="bt-one">Log In</button></a>
-                <a href="sign up.html"><button class="bt-tow">Sign Up</button></a>
-            `;
-        }
-    }
+    } 
+    // else {
+    //     // Restore Sign In and Sign Up buttons when not logged in
+    //     if (buttonsDiv) {
+    //         buttonsDiv.innerHTML = `
+    //             <a href="sign In.html"><button class="bt-one">Log In</button></a>
+    //             <a href="sign up.html"><button class="bt-tow">Sign Up</button></a>
+    //         `;
+    //     }
+    // }
 
     // Fetch best-selling books from Google Books API
     async function fetchBestSellingBooks() {
         try {
-            // Fetch 4 popular books
             const response = await fetch(`https://www.googleapis.com/books/v1/volumes?q=bestseller&maxResults=4&key=${API_KEY}`);
             if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
             const data = await response.json();
             const books = data.items || [];
-
+            
             // Update the Best Selling Books section
             const booksContainer = document.querySelector(".best-section .books");
             if (booksContainer) {
@@ -64,9 +63,9 @@ document.addEventListener("DOMContentLoaded", function () {
                     const saleInfo = book.saleInfo || {};
 
                     // Get book image, title, price, and description
-                    const imageUrl = volumeInfo.imageLinks?.thumbnail ||
+                    const imageUrl = volumeInfo.imageLinks?.thumbnail || //whats that line meant
                         volumeInfo.imageLinks?.smallThumbnail ||
-                        'https://via.placeholder.com/150x200?text=No+Cover';
+                        'assets/right_background.jpeg';
                     const title = volumeInfo.title || 'Unknown Title';
                     let price = '30.00'; // Default price
                     if (saleInfo.listPrice) {

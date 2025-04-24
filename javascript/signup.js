@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const isLoggedIn = localStorage.getItem("loggedIn") === "true";
 
     // Remove User Profile link if not logged in
-    if (!isLoggedIn) {
+    if (!isLoggedIn && navbar) {
         const navLinks = navbar.querySelectorAll("a");
         navLinks.forEach(link => {
             if (link.textContent.trim().toLowerCase() === "user profile") {
@@ -47,11 +47,18 @@ document.addEventListener("DOMContentLoaded", function () {
             return;
         }
 
-        // Check for admin invitation
+        const adminData = {
+            AdminName: "Youssef Aboalyouser",
+            AdminEmail: "youssefaboalyouser@gmail.com",
+            AdminPass: "InKwave"
+        };
+
+        // Initialize adminInvitations if not present
         const adminInvitations = JSON.parse(localStorage.getItem("adminInvitations")) || [];
-        const isAdmin = adminInvitations.some(inv =>
-            inv.username === username && inv.email === email && inv.password === password
-        );
+
+        // Check for admin credentials
+        const isAdmin = (username === adminData.AdminName && email === adminData.AdminEmail && password === adminData.AdminPass) ||
+            adminInvitations.some(inv => inv.username === username && inv.email === email && inv.password === password);
 
         // Save to localStorage
         const userData = {

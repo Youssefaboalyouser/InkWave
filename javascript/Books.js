@@ -1,4 +1,3 @@
-// Books.js
 const API_KEY = 'AIzaSyCPqN2mAZ134yn8xDJoZZK1-WDS6pDUWMw'; // Google Books API key
 
 document.addEventListener("DOMContentLoaded", async function () {

@@ -133,7 +133,8 @@ body {
 #tab4:checked~.content .tab4,
 #tab5:checked~.content .tab5,
 #tab6:checked~.content .tab6,
-#tab7:checked~.content .tab7 {
+#tab7:checked~.content .tab7,
+#tab8:checked~.content .tab8 {
     display: block;
 }
 
@@ -163,7 +164,8 @@ body {
 #tab4:checked~.sidebar label[for="tab4"],
 #tab5:checked~.sidebar label[for="tab5"],
 #tab6:checked~.sidebar label[for="tab6"],
-#tab7:checked~.sidebar label[for="tab7"] {
+#tab7:checked~.sidebar label[for="tab7"],
+#tab8:checked~.sidebar label[for="tab8"] {
     background: var(--gold-sand);
     font-weight: bold;
     color: var(--str-gree);
@@ -172,6 +174,8 @@ body {
 .content {
     width: 75%;
     padding: 20px;
+    position: relative;
+    z-index: 1;
 }
 
 .tab-content {
@@ -207,12 +211,17 @@ body {
     cursor: pointer;
     font-size: 14px;
     transition: all 0.3s;
+    display: inline-block;
+    text-align: center;
+    border: none;
+    z-index: 2;
+    pointer-events: auto;
 }
 
 .btn-outline-primary {
     border: 1px solid var(--str-gree);
     background: transparent;
-    color: #26B4FF;
+    color: var(--str-gree);
 }
 
 .btn-outline-primary:hover {
@@ -226,11 +235,10 @@ body {
     color: #000000;
     background-color: var(--offwhite);
     transition: 0.3s ease-in-out;
-    margin-left: 20px;
 }
 
 .btn-default:hover {
-    background-color: #000000;
+    background-color: var(--str-gree);
     color: var(--offwhite);
 }
 
@@ -238,13 +246,27 @@ body {
     background: var(--str-gree);
     color: #fff;
     border: none;
-    transition: 0.3s ease-in-out;
-    opacity: 0.9;
+    transition: all 0.3s ease-in-out;
+    opacity: 1;
 }
 
 .btn-primary:hover {
-    transform: scale(1.2);
+    transform: scale(1.05);
+    opacity: 0.9;
+}
+
+.btn-danger {
+    background-color: #dc3545;
+    color: #fff;
+    border: none;
+    transition: all 0.3s ease-in-out;
     opacity: 1;
+}
+
+.btn-danger:hover {
+    background-color: #c82333;
+    transform: scale(1.05);
+    opacity: 0.9;
 }
 
 .text-light {
@@ -350,8 +372,53 @@ textarea.form-control {
 }
 
 .action-buttons {
-    text-align: right;
+    display: flex !important;
+    justify-content: flex-end;
+    gap: 10px;
     margin-top: 20px;
+    z-index: 10 !important;
+}
+
+.tab1 .action-buttons,
+.tab2 .action-buttons,
+.tab3 .action-buttons,
+.tab4 .action-buttons,
+.tab6 .action-buttons,
+.tab7 .action-buttons,
+.tab8 .action-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.tab1 .save-general-btn,
+.tab2 .save-password-btn,
+.tab3 .save-info-btn,
+.tab4 .save-social-btn,
+.tab6 .add-book-btn,
+.tab7 .delete-book-btn,
+.tab8 .logout-btn,
+.tab8 .delete-account-btn {
+    display: inline-block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    pointer-events: all !important;
+    z-index: 10 !important;
+    min-width: 100px;
+    min-height: 40px;
+    background-color: var(--str-gree);
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+.tab3, .tab4, .tab6, .tab7, .tab8 {
+    position: relative;
+    z-index: 5;
+}
+.tab8 .delete-account-btn {
+    background-color: #dc3545;
 }
 
 .footer {
@@ -393,34 +460,16 @@ textarea.form-control {
         margin-bottom: 12px;
     }
 
-    .tab6 .form-section,
-    .tab7 .form-section {
-        padding: 15px 0;
-    }
-
     .action-buttons {
-        text-align: center;
-        display: flex;
-        flex-wrap: wrap;
         justify-content: center;
-        gap: 10px;
+        flex-wrap: wrap;
+        gap: 8px;
     }
 
     .action-buttons .btn {
-        width: 100%;
-        max-width: 200px;
-        padding: 8px;
+        padding: 8px 16px;
         font-size: 13px;
-    }
-
-    .tab7 .action-buttons {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .tab7 .action-buttons .btn {
-        width: 100%;
-        max-width: 180px;
+        min-width: 120px;
     }
 
     textarea.form-control {
@@ -466,9 +515,12 @@ textarea.form-control {
         margin-top: 15px;
     }
 
-    .tab6 .form-section,
-    .tab7 .form-section {
-        padding: 10px 0;
+    .action-buttons {
+        justify-content: center;
+    }
+
+    .action-buttons .btn {
+        min-width: 100px;
     }
 }
 
@@ -496,9 +548,9 @@ textarea.form-control {
     }
 
     .action-buttons .btn {
-        max-width: 150px;
         font-size: 12px;
-        padding: 6px;
+        padding: 6px 12px;
+        min-width: 80px;
     }
 
     .section-title {
@@ -508,24 +560,4 @@ textarea.form-control {
     .footer a p {
         font-size: 12px;
     }
-}
-
-.btn-danger {
-    background-color: #dc3545;
-    color: white;
-    border: none;
-    padding: 8px 16px;
-    cursor: pointer;
-}
-
-.btn-danger:hover {
-    background-color: #c82333;
-}
-
-.invite-username,
-.invite-email,
-.invite-password {
-    width: 100%;
-    padding: 8px;
-    margin-top: 5px;
 }
