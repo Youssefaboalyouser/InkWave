@@ -26,15 +26,13 @@ document.addEventListener("DOMContentLoaded", function () {
                     link.remove();
                 }
             } else {
-                if (linkText === "user profile") {
+                if (linkText === "user profile"|| linkText === "purchases") {
                     link.remove();
                 }
             }
         });
-    } else {
-        console.warn("Navbar not found");
     }
-
+    
     // Hide admin tabs for non-admin users
     if (!isAdmin) {
         ['tab6', 'tab7'].forEach(tab => {

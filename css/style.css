@@ -49,6 +49,8 @@ html {
     background-color: #000000;
     height: 50px;
     align-items: center;
+    position: relative;
+    z-index: 200;
 }
 
 .navbar a{

@@ -15,8 +15,8 @@ document.addEventListener("DOMContentLoaded", async function () {
                     link.remove();
                 }
             } else {
-                // Remove User Profile link when not logged in
-                if (linkText === "User profile") {
+                // Remove User Profile and Purchases links when not logged in
+                if (linkText === "User Profile" || linkText === "Purchases") {
                     link.remove();
                 }
             }
@@ -102,9 +102,24 @@ document.addEventListener("DOMContentLoaded", async function () {
                     window.location.href = "sign In.html";
                     return;
                 }
-                // Simulate adding to purchases
-                alert(`You have chosen to ${select.value} "${bookData.title}" for $${select.value === "borrow" ? bookData.borrowPrice : bookData.buyPrice}.`);
-                // window.location.href = "purshes.html";
+
+                // Add book to cart
+                const bookToAdd = {
+                    image: bookData.image,
+                    title: bookData.title,
+                    action: select.value,
+                    price: select.value === "borrow" ? bookData.borrowPrice : bookData.buyPrice
+                };
+                addToCart(bookToAdd);
+
+                alert(`You have chosen to ${select.value} "${bookData.title}" for $${select.value === "borrow" ? bookData.borrowPrice : bookData.buyPrice}. Added to cart!`);
+                confrimed = confirm("Do you want to spend now ?");
+                if(confrimed){
+                    window.location.href = "cart.html";
+                }
+                else{
+                    window.location.href = "books.html"
+                }
             });
         }
     } catch (error) {
@@ -112,3 +127,10 @@ document.addEventListener("DOMContentLoaded", async function () {
         document.querySelector(".book-container").innerHTML = "<p>Error loading book details. Please try again later.</p>";
     }
 });
+
+// Function to add book to cart
+function addToCart(book) {
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    cart.push(book);
+    localStorage.setItem("cart", JSON.stringify(cart));
+}

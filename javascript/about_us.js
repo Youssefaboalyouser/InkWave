@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         } else {
             // Remove User Profile link when not logged in
-            if (linkText === "User profile") {
+            if (linkText === "User profile" || linkText === "purchases") {
                 link.remove();
             }
         }

@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         } else {
             // Remove User Profile link when not logged in
-            if (linkText === "User profile") {
+            if (linkText === "User profile"|| linkText === "purchases") {
                 link.remove();
             }
         }
@@ -37,15 +37,6 @@ document.addEventListener("DOMContentLoaded", function () {
             `;
         }
     } 
-    // else {
-    //     // Restore Sign In and Sign Up buttons when not logged in
-    //     if (buttonsDiv) {
-    //         buttonsDiv.innerHTML = `
-    //             <a href="sign In.html"><button class="bt-one">Log In</button></a>
-    //             <a href="sign up.html"><button class="bt-tow">Sign Up</button></a>
-    //         `;
-    //     }
-    // }
 
     // Fetch best-selling books from Google Books API
     async function fetchBestSellingBooks() {

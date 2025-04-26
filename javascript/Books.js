@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", async function () {
             }
         } else {
             // Remove User Profile link when not logged in
-            if (linkText === "User profile") {
+            if (linkText === "User profile"|| linkText === "purchases") {
                 link.remove();
                 if (userProfileSpan) userProfileSpan.remove();
                 if (profileImage) profileImage.remove();
@@ -82,7 +82,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     const bestAuthorSection = document.querySelector(".Best-Author .book-list");
     async function fetchBestAuthorBooks() {
         try {
-            const response = await fetch(`https://www.googleapis.com/books/v1/volumes?q=inauthor:"Ahmed Khaled Tawfik"&maxResults=6&key=${API_KEY}`);
+            const response = await fetch(`https://www.googleapis.com/books/v1/volumes?q=inauthor:"نجيب محفوظ"&maxResults=6&key=${API_KEY}`);
             if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
             const data = await response.json();
             const books = data.items || [];

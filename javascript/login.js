@@ -2,15 +2,22 @@ document.addEventListener("DOMContentLoaded", function () {
     const navbar = document.querySelector(".navbar");
     const isLoggedIn = localStorage.getItem("loggedIn") === "true";
 
-    // Remove User Profile link if not logged in
-    if (!isLoggedIn && navbar) {
-        const navLinks = navbar.querySelectorAll("a");
-        navLinks.forEach(link => {
-            if (link.textContent.trim().toLowerCase() === "user profile") {
+    const navLinks = navbar.querySelectorAll("a");
+    navLinks.forEach(link => {
+        const linkText = link.textContent.trim();
+        if (isLoggedIn) {
+            // Remove Sign In and Sign Up links when logged in
+            if (linkText === "Sign In" || linkText === "Sign Up") {
                 link.remove();
             }
-        });
-    }
+        } else {
+            // Remove User Profile link when not logged in
+            if (linkText === "User Profile" || linkText === "purchases") {
+                link.remove();
+            }
+        }
+    });
+
 
     const adminData = {
         AdminName: "Youssef Aboalyouser",

@@ -11,75 +11,52 @@
 </head>
 
 <body>
+  <nav class="navbar">
+    <a href="index.html">Main</a>
+    <a href="sign In.html">Sign In</a>
+    <a href="sign up.html">Sign Up</a>
+    <a href="books.html">Books</a>
+    <a href="cart.html">Purchases</a>
+    <a href="user_profile.html">User Profile</a>
+    <a href="contact.html">About Us</a>
+  </nav>
   <!-- Header -->
   <header>
     <a href="index.html" class="logo">InkWave</a>
     <a href="cart.html" class="cart-icon">
       <i class="ri-book-2-line"></i>
-      <span class="cart-item-count">2</span>
+      <span class="cart-item-count">0</span>
     </a>
   </header>
 
   <!-- Cart Page Content -->
   <main class="cart-page">
-    <h2 class="cart-title">Your Borrow List</h2>
-
-    <!-- Book 1 -->
-    <div class="cart-item">
-      <div class="cart-item-left">
-        <img src="assets/book12.jpg" alt="Book Title One" class="cart-book-img">
-      </div>
-      <div class="cart-item-right">
-        <h3 class="product-title">في ممر الفئران</h3>
-        <p class="ref">Ref: LIB-001</p>
-        <div class="delivery-options">
-          <span><i class="ri-store-2-line"></i> Library Pickup</span>
-          <span><i class="ri-truck-line"></i> Home Delivery</span>
-        </div>
-        <div class="item-details">
-          <span>Qty: 1</span>
-          <span>Due in: 14 days</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- Book 2 -->
-    <div class="cart-item">
-      <div class="cart-item-left">
-        <img src="assets/book8.jpg" alt="Book Title Two" class="cart-book-img">
-      </div>
-      <div class="cart-item-right">
-        <h3 class="product-title">10 minutes and 38 seconds in that strange world</h3>
-        <p class="ref">Ref: LIB-002</p>
-        <div class="delivery-options">
-          <span><i class="ri-store-2-line"></i> Library Pickup</span>
-          <span><i class="ri-truck-line"></i> Home Delivery</span>
-        </div>
-        <div class="item-details">
-          <span>Qty: 1</span>
-          <span>Due in: 14 days</span>
-        </div>
-      </div>
+    <h2 class="cart-title">Your Books List</h2>
+    <div id="cart-items">
+      <!-- Cart items will be dynamically added here -->
     </div>
 
     <!-- Summary -->
     <div class="order-summary">
       <div class="total-items">
         <span>Total Items:</span>
-        <span>2</span>
+        <span id="total-items-count">0</span>
       </div>
-      <button class="btn-buy">Confirm Borrow Request</button>
+      <div class="total-price">
+        <span>Total Price:</span>
+        <span id="total-price-amount">$0.00</span>
+      </div>
+      <button class="btn-buy" id="confirm-request-btn">Confirm Request</button>
     </div>
-
-
   </main>
+
   <footer class="footer">
-    <a href="#" target="_blank">
-      <p>
-        <p>2025 &copy; Abdelrahman Mohsen, All Rights reserved</p>
-      </p>
+    <a href="#">
+      <p>2025 © Abdelrahman Mohsen, All Rights Reserved</p>
     </a>
   </footer>
+
+  <script src="javascript/cart.js"></script>
 </body>
 
 </html>
